@@ -3,7 +3,7 @@ mod database;
 
 fn main() {
     println!("Welcome to the LinkedList program.");
-    println!("As seen in Forbes, this is the best program in the world.");
+    println!("As seen in Forbs, this is the best program in the world.");
 
     let mut db = database::Database::new();
 
