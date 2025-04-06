@@ -23,13 +23,16 @@ impl Database {
     pub fn get(&self, key: i64) -> Option<i64> {
         let key_hash = murmurhash3_x64_128(&key.to_le_bytes(), &0);
         let index = (HASH_TABLE_SIZE - 1) & key_hash as usize;
-        
+
         self.hash_table[index]
     }
 
     pub fn print_all(&self) {
         for i in 0..HASH_TABLE_SIZE {
-            println!("{}: {:?}", i, self.hash_table[i])
+            match self.hash_table[i].as_ref() {
+                Some(value) => println!("idx {} -> {}", i, value),
+                None => {}
+            }
         }
     }
 }

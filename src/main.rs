@@ -12,7 +12,7 @@ fn main() {
         println!("2. Get");
         println!("3. Print");
         println!("0. Exit");
-        print!("Select an option: ");
+        println!("Select an option: ");
 
         let mut user_choice_input = String::new();
         std::io::stdin().read_line(&mut user_choice_input).expect("Failed to read input");
